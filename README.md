@@ -15,7 +15,6 @@ This project contains these packages:
 		<td>Pinia
 		<td>Vue Router
 		<td>Prettier
-
 	</tr>
 	<tr>
 	<td width="10%">
