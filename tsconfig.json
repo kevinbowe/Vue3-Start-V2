@@ -36,9 +36,8 @@
 			"@/*": ["./src/*"],
 		},
 
-		//	ADD 11/28/23
-		"noEmit" : true,
-		// "noEmit": false,
+		//	DISABLED 2/21/24
+		// "noEmit" : true,
 		"noUnusedLocals" : false,
 		"noImplicitAny": false,
 		"noUnusedParameters": false,

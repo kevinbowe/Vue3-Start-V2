@@ -1,33 +1,31 @@
 <script setup lang="ts">
-import { ref, inject } from "vue"
+import { ref, inject, getCurrentInstance } from "vue"
 import { useUserPiniaStore } from "../stores/users"
 
 import '@mdi/font/css/materialdesignicons.css'
 /* -------------------------------------------------------------------------- */
-const log = inject('log', null)					// DEBUG
-const bar = inject('bar', null)					// DEBUG
-const whitebar = inject('whitebar', null)		// DEBUG
-const redbar = inject('redbar', null)			// DEBUG
-const bluebar = inject('bluebar', null)		// DEBUG
-const getNames = inject('getNames', null)		// DEBUG
+const log:any = inject('log')
+const bar:any = inject('bar')
+const whitebar:any = inject('whitebar')
+const redbar:any = inject('redbar')
+const bluebar:any = inject('bluebar')
+const getNames:any = inject('getNames')
 /* -------------------------------------------------------------------------- */
 const piniaStore = useUserPiniaStore()
 
 /* -------------------------------------------------------------------------- */
-const localMsg = "my local message"		//----------------------------// DEBUG
-const myObj = {"ONE": "one", "TWO": "two", "THREE": "THREE-Text"}		// DEBUG
+const localMsg = "my local message"
+const myObj = {"ONE": "one", "TWO": "two", "THREE": "THREE-Text"}
 
 /* %%%%%%  On Page Load %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-redbar(`inject(redbar) -- Dev Page`)				// ------------------------------// DEBUG
-log(`DevView.vue Executing -- ${localMsg} -- Value: `, myObj.TWO)		// DEBUG
+redbar(`inject(redbar) -- Dev Page`)
+log(`DevView.vue Executing -- ${localMsg} -- Value: `, myObj.TWO)
 
-////	Using global properies -- Defined in main.ts
-import { getCurrentInstance } from 'vue'
 
-const gProps = getCurrentInstance().appContext.config.globalProperties
+const gProps = getCurrentInstance()?.appContext.config.globalProperties
 
-const gMsg = gProps.myGlobMsg
-const gFunc = gProps.myGlobFunc
+const gMsg = gProps?.gMsg
+const gFunc = gProps?.gFunc
 
 log(`(gMsg) > ${gMsg}`)
 gFunc(`(gFunc( \${gMsg} )) > ${gMsg}`)

@@ -38,9 +38,9 @@ const vuetify = createVuetify({ components, directives })
 const app = createApp(App)
 
 //	Defining global data and functions -- This is discouraged.
-app.config.globalProperties.myGlobMsg = 
-	"This is a Glob Msg"
-app.config.globalProperties.myGlobFunc = 
+app.config.globalProperties.gMsg = 
+"This is a Glob Msg"
+app.config.globalProperties.gFunc = 
 	(msg:string, value:any = "") => { console.log(`%c${msg}`, "color: cyan;", value) },
 
 // Development utility functions - user inject to implement

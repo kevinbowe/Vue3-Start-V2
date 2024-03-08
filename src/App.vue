@@ -1,33 +1,32 @@
 <script setup lang="ts">
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 import { RouterLink, RouterView } from 'vue-router';
-// import HelloWorld from './components/HelloWorld.vue'
 import { inject } from "vue"
 import '@mdi/font/css/materialdesignicons.css'
-import con from './components/MyUtil';						// DEBUG
-import { fail } from './components/MyConsoleUtil'		// DEBUG
+import con from './components/MyUtil';
+import { fail } from './components/MyConsoleUtil'
 /* ----------------------------------------------------------------------------- */
-const log = inject('log', null)					// DEBUG
-const bar = inject('bar', null)					// DEBUG
-const whitebar = inject('whitebar', null)		// DEBUG
-const redbar = inject('redbar', null)			// DEBUG
-const bluebar = inject('bluebar', null)		// DEBUG
+const log:any = inject('log')
+const bar:any = inject('bar')
+const whitebar:any = inject('whitebar')
+const redbar:any = inject('redbar')
+const bluebar:any = inject('bluebar')
 /* ----------------------------------------------------------------------------- */
-const localMsg = "my local message"												// DEBUG
-const myObj = {"ONE": "one", "TWO": "two", "THREE": "THREE-Text"}		// DEBUG
+const localMsg = "my local message"
+const myObj = {"ONE": "one", "TWO": "two", "THREE": "THREE-Text"}
 
 /* %%%%%%  On Page Load %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-bluebar(`(inject(bluebar)) > App.vue Executing`)		//----------------------------------------------------------------// DEBUG
-log(`( inject(log)) > App.vue Executing -- ${localMsg} -- Value: `, myObj.THREE)	// DEBUG
-con.pass(`((import con) con.pass) > App.vue Executing -- ${localMsg} -- Value: `, myObj.ONE)					// DEBUG
-fail(`(import {fail}) > App.vue Executing -- ${localMsg} -- Value: `, myObj.TWO)								// DEBUG
+bluebar(`(inject(bluebar)) > App.vue Executing`)
+log(`( inject(log)) > App.vue Executing -- ${localMsg} -- Value: `, myObj.THREE)
+con.pass(`((import con) con.pass) > App.vue Executing -- ${localMsg} -- Value: `, myObj.ONE)
+fail(`(import {fail}) > App.vue Executing -- ${localMsg} -- Value: `, myObj.TWO)
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 </script>
 
 <template>
 	<header>
-		<h1 style="text-align: center;">vue3-Start-Fix-V1</h1>
+		<h1 style="text-align: center;">Vue3-Start-V2</h1>
 		<!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 		<!-- <div class="wrapper">
 			<HelloWorld msg="You did it!" />
