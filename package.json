@@ -1,5 +1,5 @@
 {
-  "name": "vue3-Start-Fix-V1",
+  "name": "vue3-start-v2",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -8,11 +8,14 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
+    "type-check-BAD": "vue-tsc --build --force",
+    "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+	 "build-dts": "./zshDefineTypes_v2.sh"
   },
   "dependencies": {
+    "@babel/types": "^7.23.9",
     "@mdi/font": "^7.4.47",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
